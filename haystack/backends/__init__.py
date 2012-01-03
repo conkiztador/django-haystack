@@ -481,7 +481,7 @@ class BaseSearchQuery(object):
         the results.
         """
         if self._facet_counts is None:
-            self.run()
+            self.get_results()
 
         return self._facet_counts
 
@@ -493,7 +493,7 @@ class BaseSearchQuery(object):
         the results.
         """
         if self._spelling_suggestion is None:
-            self.run(spelling_query=preferred_query)
+            self.get_results(spelling_query=preferred_query)
 
         return self._spelling_suggestion
 
